@@ -1,0 +1,62 @@
+package com.optimas.relationshipservice.repository;
+
+
+import com.optimas.relationshipservice.utility.OrientDBUtil;
+import com.orientechnologies.orient.core.db.ODatabaseSession;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class RelationshipRepository {
+
+    // Create Edge in OrientDB
+    public String createAssetComponentLink(String assetId, String componentId) {
+        try (ODatabaseSession db = OrientDBUtil.getSession()) {
+        	  // **Step 1: Check if the link already exists**
+            String checkQuery = """
+                SELECT FROM HAS_COMPONENT 
+                WHERE out.id = ? AND in.id = ?
+            """;
+            var existingEdge = db.query(checkQuery, assetId, componentId);
+            if (existingEdge.hasNext()) {
+                return "Component is already linked to this Asset!";
+            }
+        	
+            db.command("CREATE EDGE HAS_COMPONENT FROM (SELECT FROM AssetDef WHERE id = ?) TO (SELECT FROM ComponentDef WHERE id = ?)", assetId, componentId);
+            return "Component linked to Asset successfully!";
+        } catch (Exception e) {
+            return "Failed to link component: " + e.getMessage();
+        }
+    }
+    
+    public List<String> findComponentsByAssetId(String assetId) {
+        List<String> componentIds = new ArrayList<>();
+
+        try (ODatabaseSession db = OrientDBUtil.getSession()) {
+            var resultSet = db.query("SELECT out('HAS_COMPONENT').id as componentIds FROM AssetDef WHERE id = ?", assetId);
+            
+            while (resultSet.hasNext()) {
+                var record = resultSet.next();
+                Object result = record.getProperty("componentIds");
+
+                // ✅ Check if it's a list, then extract values correctly
+                if (result instanceof List<?> list) {
+                    for (Object obj : list) {
+                        if (obj instanceof String id) {
+                            componentIds.add(id);
+                        }
+                    }
+                } else if (result instanceof String singleId) {
+                    componentIds.add(singleId);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return componentIds;
+    }
+
+   
+}

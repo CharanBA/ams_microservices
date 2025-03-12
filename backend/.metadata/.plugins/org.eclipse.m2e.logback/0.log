@@ -1,0 +1,36 @@
+2025-03-13 02:30:39,952 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-03-13 02:31:10,954 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.optimas:AssetService:0.0.1-SNAPSHOT @ E:\OptimasAi\AssetManagementSystem\backend\AssetService\pom.xml.
+2025-03-13 02:31:16,399 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:16,440 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:16,450 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\AssetService\src\test\resources
+2025-03-13 02:31:19,814 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:19,818 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:19,825 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\AssetService\src\test\resources
+2025-03-13 02:31:21,594 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.optimas:ComponentService:0.0.1-SNAPSHOT @ E:\OptimasAi\AssetManagementSystem\backend\ComponentService\pom.xml.
+2025-03-13 02:31:25,912 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:26,019 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:26,034 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\ComponentService\src\test\resources
+2025-03-13 02:31:28,348 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.optimas:RelationshipService:0.0.1-SNAPSHOT @ E:\OptimasAi\AssetManagementSystem\backend\RelationshipService\pom.xml.
+2025-03-13 02:31:31,755 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:31,806 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:31,814 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\RelationshipService\src\test\resources
+2025-03-13 02:31:32,996 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.optimas:api-gateway:0.0.1-SNAPSHOT @ E:\OptimasAi\AssetManagementSystem\backend\api-gateway\pom.xml.
+2025-03-13 02:31:35,915 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:35,947 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:35,955 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\api-gateway\src\test\resources
+2025-03-13 02:31:38,232 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.optimas:eurekaserver:0.0.1-SNAPSHOT @ E:\OptimasAi\AssetManagementSystem\backend\eurekaserver\pom.xml.
+2025-03-13 02:31:41,487 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:41,536 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:41,544 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\eurekaserver\src\test\resources
+2025-03-13 02:31:42,947 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:42,949 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:42,955 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\ComponentService\src\test\resources
+2025-03-13 02:31:43,551 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:43,553 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:43,559 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\RelationshipService\src\test\resources
+2025-03-13 02:31:43,972 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:43,975 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:43,981 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\api-gateway\src\test\resources
+2025-03-13 02:31:44,330 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-03-13 02:31:44,333 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-03-13 02:31:44,338 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\OptimasAi\AssetManagementSystem\backend\eurekaserver\src\test\resources
