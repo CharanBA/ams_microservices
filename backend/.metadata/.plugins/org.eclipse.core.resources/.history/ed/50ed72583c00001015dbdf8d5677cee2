@@ -1,0 +1,47 @@
+package com.optimas.relationshipservice.service;
+
+import com.optimas.relationshipservice.client.AssetServiceClient;
+
+import java.util.List;
+
+import com.optimas.relationshipservice.client.ComponentServiceClient;
+import com.optimas.relationshipservice.repository.RelationshipRepository;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RelationshipService {
+
+	private RelationshipRepository relationshipRepository;
+
+	private AssetServiceClient assetServiceClient;
+
+	private ComponentServiceClient componentServiceClient;
+
+	public RelationshipService(RelationshipRepository relationshipRepository, AssetServiceClient assetServiceClient,
+			ComponentServiceClient componentServiceClient) {
+		super();
+		this.relationshipRepository = relationshipRepository;
+		this.assetServiceClient = assetServiceClient;
+		this.componentServiceClient = componentServiceClient;
+	}
+
+	public String linkComponentToAsset(String assetId, String componentId) {
+		ResponseEntity<String> assetResponse = assetServiceClient.getAssetById(assetId);
+		if (!assetResponse.getStatusCode().is2xxSuccessful()) {
+			return "Asset not found!";
+		}
+
+		ResponseEntity<String> componentResponse = componentServiceClient.getComponentById(componentId);
+		if (!componentResponse.getStatusCode().is2xxSuccessful()) {
+			return "Component not found!";
+		}
+
+		return relationshipRepository.createAssetComponentLink(assetId, componentId);
+	}
+
+	public List<Object> getComponentsByAssetId(String assetId) {
+		return componentServiceClient.getComponentsByAssetId(assetId).getBody();
+	}
+
+}

@@ -1,12 +1,12 @@
 package com.optimas.assetservice.controller;
 
 import com.optimas.assetservice.dto.ApiResponse;
+import com.optimas.assetservice.dto.PaginatedResponse;
 import com.optimas.assetservice.model.AssetDef;
 import com.optimas.assetservice.service.AssetService;
 import org.apache.hc.core5.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -33,11 +33,24 @@ public class AssetController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<ApiResponse<List<AssetDef>>> listAllAssets(
+    public ResponseEntity<PaginatedResponse<AssetDef>> listAllAssets(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
+        
         List<AssetDef> assets = assetService.listAllAssets(page, size);
-        return ResponseEntity.ok(new ApiResponse<>("Asset list retrieved successfully", assets));
+        long totalItems = assetService.getTotalAssetCount();
+        int totalPages = (int) Math.ceil((double) totalItems / size);
+
+        PaginatedResponse<AssetDef> response = new PaginatedResponse<>(
+                "Asset list retrieved successfully",
+                assets,
+                totalItems,
+                totalPages,
+                page,
+                size
+        );
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/components")

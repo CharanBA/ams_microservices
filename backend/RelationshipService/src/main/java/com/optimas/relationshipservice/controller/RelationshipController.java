@@ -1,6 +1,7 @@
 package com.optimas.relationshipservice.controller;
 
 import com.optimas.relationshipservice.dto.ApiResponse;
+import com.optimas.relationshipservice.dto.ComponentDTO;
 import com.optimas.relationshipservice.service.RelationshipService;
 import org.apache.hc.core5.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,8 +27,10 @@ public class RelationshipController {
     }
 
     @GetMapping("/components")
-    public ResponseEntity<ApiResponse<List<Object>>> getComponentsByAssetId(@RequestParam String assetId) {
-        List<Object> components = relationshipService.getComponentsByAssetId(assetId);
-        return ResponseEntity.ok(new ApiResponse<>("Components retrieved successfully", components));
+    public ResponseEntity<ApiResponse<List<ComponentDTO>>> getComponentsByAssetId(@RequestParam String assetId) {
+        ApiResponse<List<ComponentDTO>> components = relationshipService.getComponentsByAssetId(assetId);
+        
+        return ResponseEntity.ok(components); 
     }
+
 }

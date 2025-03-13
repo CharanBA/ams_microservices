@@ -42,7 +42,9 @@ public class ComponentController {
 
     @GetMapping("/by-asset")
     public ResponseEntity<ApiResponse<List<ComponentDef>>> getComponentsByAssetId(@RequestParam("id") String assetId) {
+    	
         List<ComponentDef> components = componentService.getComponentsByAssetId(assetId);
+        System.out.println("heloo");
         return ResponseEntity.ok(new ApiResponse<>("Components retrieved successfully", components));
     }
 }

@@ -4,15 +4,16 @@ import com.optimas.assetservice.dto.ComponentDTO;
 import java.util.Date;
 import java.util.List;
 
+
 public class AssetDef {
-    private String id;  // Unique ID (UUID)
+    private String id;  
     private String name;
     private String category;
     private String description;
     private Date purchaseDate;
     private String status;
     private String assignedTo;
-    private List<ComponentDTO> components; // Added list of components
+    private List<ComponentDTO> components; 
 
     public AssetDef() {}
 
@@ -87,8 +88,8 @@ public class AssetDef {
         return components;
     }
 
-    public void setComponents(List<ComponentDTO> components) {
-        this.components = components;
+    public void setComponents(List<ComponentDTO> components2) {
+        this.components = components2;
     }
 
     @Override

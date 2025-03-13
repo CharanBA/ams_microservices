@@ -1,0 +1,5 @@
+package com.optimas.assetservice.dto;
+
+public class PaginatedResponse {
+
+}

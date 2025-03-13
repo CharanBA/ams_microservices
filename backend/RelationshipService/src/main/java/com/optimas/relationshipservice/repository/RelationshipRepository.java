@@ -11,10 +11,8 @@ import java.util.List;
 @Repository
 public class RelationshipRepository {
 
-    // Create Edge in OrientDB
     public String createAssetComponentLink(String assetId, String componentId) {
         try (ODatabaseSession db = OrientDBUtil.getSession()) {
-        	  // **Step 1: Check if the link already exists**
             String checkQuery = """
                 SELECT FROM HAS_COMPONENT 
                 WHERE out.id = ? AND in.id = ?
@@ -41,7 +39,6 @@ public class RelationshipRepository {
                 var record = resultSet.next();
                 Object result = record.getProperty("componentIds");
 
-                // ✅ Check if it's a list, then extract values correctly
                 if (result instanceof List<?> list) {
                     for (Object obj : list) {
                         if (obj instanceof String id) {

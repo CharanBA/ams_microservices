@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.optimas.assetservice.dto.ComponentDTO;
+import com.optimas.assetservice.dto.ApiResponse;
 
 import java.util.List;
 
@@ -13,6 +14,6 @@ import java.util.List;
 public interface ComponentServiceClient {
 
     @GetMapping("/by-asset")
-    List<ComponentDTO> getComponentsByAssetId(@RequestParam("id") String assetId); 
+    ResponseEntity<ApiResponse<List<ComponentDTO>>> getComponentsByAssetId(@RequestParam("id") String assetId); 
 }
 

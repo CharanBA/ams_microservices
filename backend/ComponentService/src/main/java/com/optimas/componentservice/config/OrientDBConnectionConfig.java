@@ -13,10 +13,11 @@ public class OrientDBConnectionConfig {
 	public ODatabaseSession databaseSession() {
 		System.out.println("Starting OrientDB connection...");
 
-		OrientDB orient = new OrientDB("remote:localhost", OrientDBConfig.defaultConfig());
-		ODatabaseSession db = orient.open("amsdb", "root", "charanba");
+		try (OrientDB orient = new OrientDB("remote:localhost", OrientDBConfig.defaultConfig())) {
+			ODatabaseSession db = orient.open("amsdb", "root", "charanba");
 
-		System.out.println("OrientDB setup completed!");
-		return db;
+			System.out.println("OrientDB setup completed!");
+			return db;
+		}
 	}
 }

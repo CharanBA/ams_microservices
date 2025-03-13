@@ -21,12 +21,10 @@ public class ComponentService {
     }
 
     public String addComponent(ComponentDef component) {
-        // Check if component already exists by name
         if (componentRepository.getComponentByName(component.getName()) != null) {
             throw new ComponentAlreadyExistsException("Component with name '" + component.getName() + "' already exists.");
         }
 
-        // Call repository to add the component
         return componentRepository.addComponent(component);
     }
 

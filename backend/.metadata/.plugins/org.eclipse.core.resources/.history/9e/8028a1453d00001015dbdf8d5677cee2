@@ -1,0 +1,5 @@
+package com.optimas.relationshipservice.dto;
+
+public class ComponentDTO {
+
+}
