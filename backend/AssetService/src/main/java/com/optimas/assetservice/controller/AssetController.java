@@ -25,7 +25,10 @@ public class AssetController {
         return ResponseEntity.status(HttpStatus.SC_CREATED)
                 .body(new ApiResponse<>("Asset added successfully!", assetId));
     }
-
+    
+    
+    
+    
     @GetMapping
     public ResponseEntity<ApiResponse<AssetDef>> getAssetById(@RequestParam String id) {
         AssetDef asset = assetService.getAssetById(id);

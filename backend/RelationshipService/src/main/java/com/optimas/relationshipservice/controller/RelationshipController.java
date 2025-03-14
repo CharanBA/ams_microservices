@@ -13,11 +13,11 @@ import java.util.List;
 @RequestMapping("/relations")
 public class RelationshipController {
 
-    private final RelationshipService relationshipService;
+	private final RelationshipService relationshipService;
 
-    public RelationshipController(RelationshipService relationshipService) {
-        this.relationshipService = relationshipService;
-    }
+	public RelationshipController(RelationshipService relationshipService) {
+		this.relationshipService = relationshipService;
+	}
 
     @PostMapping("/link")
     public ResponseEntity<ApiResponse<String>> linkComponentToAsset(
@@ -26,11 +26,19 @@ public class RelationshipController {
         return ResponseEntity.status(HttpStatus.SC_CREATED).body(new ApiResponse<>("Component linked successfully", message));
     }
 
-    @GetMapping("/components")
-    public ResponseEntity<ApiResponse<List<ComponentDTO>>> getComponentsByAssetId(@RequestParam String assetId) {
-        ApiResponse<List<ComponentDTO>> components = relationshipService.getComponentsByAssetId(assetId);
-        
-        return ResponseEntity.ok(components); 
-    }
+//	@PostMapping("/link")
+//	public ResponseEntity<ApiResponse<String>> linkComponentToAsset(@RequestParam String assetId,
+//			@RequestParam String componentId) {
+//		String message = relationshipService.linkComponentToAsset(assetId, componentId);
+//		return ResponseEntity.status(HttpStatus.SC_CREATED)
+//				.body(new ApiResponse<>("Component linked successfully", message));
+//	}
+
+	@GetMapping("/components")
+	public ResponseEntity<ApiResponse<List<ComponentDTO>>> getComponentsByAssetId(@RequestParam String assetId) {
+		ApiResponse<List<ComponentDTO>> components = relationshipService.getComponentsByAssetId(assetId);
+
+		return ResponseEntity.ok(components);
+	}
 
 }

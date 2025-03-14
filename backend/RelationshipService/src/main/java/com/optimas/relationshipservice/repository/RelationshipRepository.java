@@ -28,6 +28,21 @@ public class RelationshipRepository {
             return "Failed to link component: " + e.getMessage();
         }
     }
+	
+//	 public String createAssetComponentLink(String assetId, String componentId) {
+//	        try (ODatabaseSession db = OrientDBUtil.getSession()) {
+//	            String checkQuery = "SELECT FROM HAS_COMPONENT WHERE out.id = ? AND in.id = ?";
+//	            var existingEdge = db.query(checkQuery, assetId, componentId);
+//	            if (existingEdge.hasNext()) {
+//	                return "Component is already linked to this Asset!";
+//	            }
+//
+//	            db.command("CREATE EDGE HAS_COMPONENT FROM (SELECT FROM AssetDef WHERE id = ?) TO (SELECT FROM ComponentDef WHERE id = ?)", assetId, componentId);
+//	            return "Component linked to Asset successfully!";
+//	        } catch (Exception e) {
+//	            return "Failed to link component: " + e.getMessage();
+//	        }
+//	    }
     
     public List<String> findComponentsByAssetId(String assetId) {
         List<String> componentIds = new ArrayList<>();

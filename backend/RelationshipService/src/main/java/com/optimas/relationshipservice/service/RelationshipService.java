@@ -2,12 +2,17 @@ package com.optimas.relationshipservice.service;
 
 import com.optimas.relationshipservice.client.AssetServiceClient;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.optimas.relationshipservice.client.ComponentServiceClient;
 import com.optimas.relationshipservice.dto.ApiResponse;
 import com.optimas.relationshipservice.dto.ComponentDTO;
 import com.optimas.relationshipservice.repository.RelationshipRepository;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -41,10 +46,18 @@ public class RelationshipService {
 
 		return relationshipRepository.createAssetComponentLink(assetId, componentId);
 	}
+	
 
+	
+	@CircuitBreaker(name = "getComponentsByAssetId", fallbackMethod = "getDefaultComponents")
+    @Retry(name = "getComponentsByAssetId", fallbackMethod = "getDefaultComponents")
 	public ApiResponse<List<ComponentDTO>> getComponentsByAssetId(String assetId) {
 	    return componentServiceClient.getComponentsByAssetId(assetId).getBody();
 	}
-
+	
+	 // Fallback method when ComponentService fails
+    public ApiResponse<List<ComponentDTO>> getDefaultComponents(String assetId, Throwable throwable) {
+        return new ApiResponse<>("Fallback: ComponentService is unavailable", Collections.emptyList());
+    }
 
 }

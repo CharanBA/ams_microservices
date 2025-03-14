@@ -1,0 +1,68 @@
+.add-component-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.add-component-container h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.add-component-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-component-container input,
+.add-component-container textarea {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: calc(100% - 20px);
+}
+
+.add-component-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.add-component-container input:focus,
+.add-component-container textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-component-container button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.add-component-container button:hover {
+  background: #0056b3;
+}
+
+.success-message {
+  color: #28a745;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+  font-weight: bold;
+}
