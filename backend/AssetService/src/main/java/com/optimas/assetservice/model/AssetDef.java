@@ -13,7 +13,7 @@ public class AssetDef {
     private Date purchaseDate;
     private String status;
     private String assignedTo;
-    private List<ComponentDTO> components; 
+//    private List<ComponentDTO> components; 
 
     public AssetDef() {}
 
@@ -25,7 +25,7 @@ public class AssetDef {
         this.purchaseDate = purchaseDate;
         this.status = status;
         this.assignedTo = assignedTo;
-        this.components = components;
+//        this.components = components;
     }
 
     public String getId() {
@@ -84,13 +84,13 @@ public class AssetDef {
         this.assignedTo = assignedTo;
     }
 
-    public List<ComponentDTO> getComponents() {
-        return components;
-    }
-
-    public void setComponents(List<ComponentDTO> components2) {
-        this.components = components2;
-    }
+//    public List<ComponentDTO> getComponents() {
+//        return components;
+//    }
+//
+//    public void setComponents(List<ComponentDTO> components2) {
+//        this.components = components2;
+//    }
 
     @Override
     public String toString() {
@@ -102,7 +102,7 @@ public class AssetDef {
                 ", purchaseDate=" + purchaseDate +
                 ", status='" + status + '\'' +
                 ", assignedTo='" + assignedTo + '\'' +
-                ", components=" + components +
+//                ", components=" + components +
                 '}';
     }
 }
