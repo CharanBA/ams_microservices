@@ -96,29 +96,29 @@ public class AssetRepository {
 		return null;
 	}
 
-//	public List<AssetDef> listAllAssets() {
-//		List<AssetDef> assets = new ArrayList<>();
-//		try (ODatabaseSession db = OrientDBUtil.getSession()) {
-//			String query = "SELECT FROM AssetDef";
-//			OResultSet resultSet = db.query(query);
-//
-//			while (resultSet.hasNext()) {
-//				OResult result = resultSet.next();
-//				AssetDef asset = new AssetDef();
-//				asset.setId(result.getProperty("id"));
-//				asset.setName(result.getProperty("name"));
-//				asset.setCategory(result.getProperty("category"));
-//				asset.setDescription(result.getProperty("description"));
-//				asset.setPurchaseDate(result.getProperty("purchaseDate"));
-//				asset.setStatus(result.getProperty("status"));
-//				asset.setAssignedTo(result.getProperty("assignedTo"));
-//				assets.add(asset);
-//			}
-//		} catch (Exception e) {
-//			System.err.println("Error retrieving assets: " + e.getMessage());
-//		}
-//		return assets;
-//	}
+	public List<AssetDef> listAllAssets() {
+		List<AssetDef> assets = new ArrayList<>();
+		try (ODatabaseSession db = OrientDBUtil.getSession()) {
+			String query = "SELECT FROM AssetDef";
+			OResultSet resultSet = db.query(query);
+
+			while (resultSet.hasNext()) {
+				OResult result = resultSet.next();
+				AssetDef asset = new AssetDef();
+				asset.setId(result.getProperty("id"));
+				asset.setName(result.getProperty("name"));
+				asset.setCategory(result.getProperty("category"));
+				asset.setDescription(result.getProperty("description"));
+				asset.setPurchaseDate(result.getProperty("purchaseDate"));
+				asset.setStatus(result.getProperty("status"));
+				asset.setAssignedTo(result.getProperty("assignedTo"));
+				assets.add(asset);
+			}
+		} catch (Exception e) {
+			System.err.println("Error retrieving assets: " + e.getMessage());
+		}
+		return assets;
+	}
 
 	public AssetDef getComponentsByAssetId(String assetId) {
 		AssetDef asset = getAssetById(assetId);
@@ -129,7 +129,7 @@ public class AssetRepository {
 		ResponseEntity<ApiResponse<List<ComponentDTO>>> responseEntity = componentServiceClient
 				.getComponentsByAssetId(assetId);
 
-		System.out.println("hello");
+		
 
 //		if (responseEntity.getBody() != null && responseEntity.getBody().getData() != null) {
 //			asset.setComponents(responseEntity.getBody().getData());

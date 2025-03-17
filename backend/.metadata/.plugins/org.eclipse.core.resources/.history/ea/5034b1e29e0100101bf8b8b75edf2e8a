@@ -1,0 +1,5 @@
+package com.optimas.api_gateway.config;
+
+public class CorsConfig {
+
+}

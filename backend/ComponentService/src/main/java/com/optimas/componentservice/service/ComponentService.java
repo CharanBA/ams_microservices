@@ -34,9 +34,9 @@ public class ComponentService {
                 .orElseThrow(() -> new ComponentNotFoundException("Component with ID " + componentId + " not found."));
     }
 
-//    public List<ComponentDef> listAllComponents() {
-//        return componentRepository.listAllComponents();
-//    }
+    public List<ComponentDef> listAllComponents() {
+        return componentRepository.listAllComponents();
+    }
     
     public List<ComponentDef> listAllComponents(int page, int size) {
         int offset = page * size;

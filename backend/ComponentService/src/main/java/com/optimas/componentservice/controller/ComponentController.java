@@ -31,7 +31,17 @@ public class ComponentController {
         ComponentDef component = componentService.getComponentById(id);
         return ResponseEntity.ok(new ApiResponse<>("Component retrieved successfully", component));
     }
-
+    
+    
+    @GetMapping("/all")
+    public ResponseEntity<ApiResponse<List<ComponentDef>>> listAllComponents() {
+        List<ComponentDef> components = componentService.listAllComponents(); // Remove pagination
+        return ResponseEntity.ok(new ApiResponse<>("Component list retrieved successfully", components));
+    }
+    
+    
+    
+    
     @GetMapping("/list")
     public ResponseEntity<ApiResponse<List<ComponentDef>>> listAllComponents(
             @RequestParam(defaultValue = "0") int page,

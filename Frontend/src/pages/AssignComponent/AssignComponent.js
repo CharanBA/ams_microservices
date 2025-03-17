@@ -18,17 +18,18 @@ const AssignComponent = () => {
     const fetchAssetsAndComponents = async () => {
       try {
         const assetsData = await getAllAssets();
+        console.log(assetsData);
         const componentsData = await getAllComponents();
 
         setAssets(
-          assetsData.map(({ id, name, category }) => ({
+          assetsData.data.map(({ id, name, category }) => ({
             id,
             label: `${name} (${category})`,
           }))
         );
 
         setComponents(
-          componentsData.map(({ id, name, category, manufacturer, serialNumber, warrantyEnd }) => ({
+          componentsData.data.map(({ id, name, category, manufacturer, serialNumber, warrantyEnd }) => ({
             id,
             label: `${name} (${category}) - ${manufacturer} | Serial: ${serialNumber} | Warranty: ${warrantyEnd}`,
           }))

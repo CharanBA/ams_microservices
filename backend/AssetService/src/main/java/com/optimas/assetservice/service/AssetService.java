@@ -36,9 +36,9 @@ public class AssetService {
 		return asset;
 	}
 
-//	public List<AssetDef> listAllAssets() {
-//		return assetRepository.listAllAssets();
-//	}
+	public List<AssetDef> listAllAssets() {
+		return assetRepository.listAllAssets();
+	}
 
 	public AssetDef getComponentsByAssetId(String assetId) {
 		return assetRepository.getComponentsByAssetId(assetId);

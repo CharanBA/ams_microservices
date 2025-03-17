@@ -14,7 +14,7 @@ const AssetDetails = () => {
     const fetchAssetDetails = async () => {
       try {
         const assetData = await getAssetById(id);
-        setAsset(assetData);
+        setAsset(assetData.data);
         setError(null);
       } catch (error) {
         console.error("Error fetching Assets:", error);
@@ -24,7 +24,7 @@ const AssetDetails = () => {
     const fetchComponents = async () => {
       try {
         const componentData = await getComponentsByAssetId(id);
-        setComponents(componentData);
+        setComponents(componentData.data);
       } catch (error) {
         console.error("Error fetching components:", error);
       }
@@ -53,11 +53,11 @@ const AssetDetails = () => {
 
       {components.length > 0 ? (
         <ul className="components-list">
-          {components.map(({ name, type, manufacturer, serialNumber, warrantyEnd }, index) => (
+          {components.map(({ name, category, manufacturer, serialNumber, warrantyEnd }, index) => (
             <li key={index}>
               <strong className="component-name">{name}</strong>
               <ul>
-                <li>Category: <span className="component-category">{type}</span></li>
+                <li>Category: <span className="component-category">{category}</span></li>
                 <li>Manufacturer: <span className="component-manufacturer">{manufacturer}</span></li>
                 <li>Serial Number: <span className="component-serial">{serialNumber}</span></li>
                 <li>Warranty: <span className="component-warranty">{warrantyEnd}</span></li>

@@ -27,14 +27,20 @@ public class AssetController {
     }
     
     
-    
-    
     @GetMapping
     public ResponseEntity<ApiResponse<AssetDef>> getAssetById(@RequestParam String id) {
         AssetDef asset = assetService.getAssetById(id);
         return ResponseEntity.ok(new ApiResponse<>("Asset retrieved successfully", asset));
     }
+    
+    @GetMapping("/all")
+    public ResponseEntity<ApiResponse<List<AssetDef>>> listAllAssets() {
+        List<AssetDef> assets = assetService.listAllAssets(); // Remove pagination
+        return ResponseEntity.ok(new ApiResponse<>("Asset list retrieved successfully", assets));
+    }
 
+
+    
     @GetMapping("/list")
     public ResponseEntity<PaginatedResponse<AssetDef>> listAllAssets(
             @RequestParam(defaultValue = "0") int page,
